@@ -107,7 +107,7 @@
 <div class="game-container">
   <div class="scoreboard" id="scoreboard">
     <div class="player-panel player-1" id="p1-panel">
-      <h3>J1 ZQSV</h3>
+      <h3>J1 WASD</h3>
       <span class="score" id="score1">0</span>
     </div>
     <div class="player-panel player-2" id="p2-panel">
@@ -124,7 +124,7 @@
   <p>2-4 JOUEURS</p>
   <p class="blink">APPUYEZ SUR 2, 3 OU 4 POUR COMENCER</p>
   <div class="controls">
-    J1: Z Q S V &nbsp;|&nbsp; J2: Flèches &nbsp;|&nbsp; J3: IJKL &nbsp;|&nbsp; J4: Numpad
+    J1: W A S D &nbsp;|&nbsp; J2: Flèches &nbsp;|&nbsp; J3: IJKL &nbsp;|&nbsp; J4: Numpad
   </div>
 </div>
 
@@ -147,7 +147,8 @@ const DIRECTIONS = {
 };
 
 const PLAYER_CONFIGS = [
-  { name: "J1", color: "#4488ff", colorLight: "#77bbff", keys: { up: "KeyZ", left: "KeyQ", down: "KeyS", right: "KeyV" } },
+  // AZERTY key codes for ZQSV: Z=KeyW, Q=KeyA, S=KeyS, V=KeyD
+  { name: "J1", color: "#4488ff", colorLight: "#77bbff", keys: { up: "KeyW", left: "KeyA", down: "KeyS", right: "KeyD" } },
   { name: "J2", color: "#44cc44", colorLight: "#77ff77", keys: { up: "ArrowUp", left: "ArrowLeft", down: "ArrowDown", right: "ArrowRight" } },
   { name: "J3", color: "#ff55aa", colorLight: "#ff88cc", keys: { up: "KeyI", left: "KeyJ", down: "KeyK", right: "KeyL" } },
   { name: "J4", color: "#ffcc00", colorLight: "#ffee55", keys: { up: "Numpad8", left: "Numpad4", down: "Numpad5", right: "Numpad6" } }
@@ -191,7 +192,7 @@ function showOverlay() {
     <h1>SNAKE BATTLE</h1>
     <p>${p}</p>
     <p class="blink">APPUYEZ SUR 2, 3 OU 4 POUR COMMENCER</p>
-    <div class="controls">J1: ZQSV &nbsp;|&nbsp; J2: Flèches &nbsp;|&nbsp; J3: IJKL &nbsp;|&nbsp; J4: Numpad</div>
+    <div class="controls">J1: W A S D &nbsp;|&nbsp; J2: Flèches &nbsp;|&nbsp; J3: IJKL &nbsp;|&nbsp; J4: Numpad</div>
   `;
 }
 
@@ -214,6 +215,7 @@ function createSnake(config, startX, startY, startDir, index) {
 
 function startGame() {
   gameState = "playing";
+  moveTimer = MOVE_INTERVAL;  // Force move on next tick
   snakes = [];
   foods = [];
   particles = [];

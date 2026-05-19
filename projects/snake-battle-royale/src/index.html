@@ -451,6 +451,7 @@ function draw() {
 }
 
 function gameLoop(timestamp) {
+  if (lastTime === 0) { lastTime = timestamp; }  // Initialiser au premier frame
   const dt = timestamp - lastTime;
   lastTime = timestamp;
   

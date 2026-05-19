@@ -1,0 +1,31 @@
+Tu es un developpeur JS expert. Cree le fichier game.js pour un clone Tetris.
+
+CONTEXTE:
+- Board: 10 colonnes x 20 lignes (tableau 2D de 0-7)
+- Pieces: 7 tetriminos classiques (I, O, T, S, Z, J, L)
+- Constantes: COLS=10, ROWS=20
+- Game loop via requestAnimationFrame
+
+CARACTERISTIQUES REQUISES:
+1. Piece active qui descend automatiquement (speed selon niveau)
+2. Deplacement lateral avec collision
+3. Rotation 90 degre avec wall-kick basique
+4. Hard drop (tombe directement) et soft drop (accelere)
+5. Collision detection (murs, sol, pieces verrouillees)
+6. Ligne clearing avec scoring (100/300/500/800 pts)
+7. Niveau progressif (vitesse diminue)
+8. Game over detection
+9. Pause toggle
+10. Methodes: spawnPiece(), move(), rotate(), drop(), lock(), clearLines(), updateScore()
+
+CODE STYLE:
+- Vanilla JS, pas de dependances
+- Fonctions bien structurees et commentees
+- Retourne SEULEMENT le code JavaScript, pas d'explication
+
+INCLUE:
+- Toutes les definitions de pieces I,O,T,S,Z,J,L avec leurs rotations
+- Constantes du jeu
+- State management (board, score, level, lines, gameState)
+
+Reponds avec LE SEUL code JavaScript, rien d'autre.

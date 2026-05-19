@@ -36,7 +36,29 @@ Dindon Design est un studio software expérimental piloté par IA distribuée su
 
 ## Projets
 
-Voir `projects/` pour la liste des projets en cours.
+### Space Invaders (port 4010)
+Classic arcade shooter - Player vs aliens. ✅ Jouable
+
+### Snake Battle Royale (port 4011)
+Snake multiplayer-style with AI opponents. ✅ Jouable (quelques bugs AZERTY)
+
+### Tetris (port 4012)
+Classic block-stacking game. ❌ Cassé (mauvais dispatch)
+
+### Breakout (port 4013)
+Classic brick-breaker. ✅ Jouable
+
+### Pong (port 4015)
+Classic 1-player Pong vs AI. ✅ 100% AI workers!
+
+### Asteroids (port 4016)
+Classic asteroid shooter. ✅ 100% AI workers!
+
+---
+
+Tous les jeux sont jouables via `http://<IP>:PORT`
+
+Voir `projects/` pour les specs détaillées.
 
 ## Roadmap
 

@@ -39,10 +39,21 @@
 
 ## Orchestration
 
-Le CTO (moi) distribue les tâches selon les capacités :
-- **Tâches légères** : vivobook (quand dispo)
-- **Frontend/UI/Tests** : nitro
-- **Backend/Architecture/Génération lourde** : desktop
+### Workflow Actuel
+1. **CTO** crée SPEC.md détaillée puis dispatche 1 fichier par worker
+2. **3 workers bossent en parallèle** sur 3 fichiers différents
+3. **Pas de timeouts** - background=true, le code arrive quand il arrive
+4. **CTO ne code jamais** - si worker échoue, reprompter
+
+### Dispatch Standard
+- **vivobook** (172.20.16.1:8080, IQ2_XXS) → input.js
+- **nitro** (100.66.131.33:8080, IQ3_S) → index.html + style.css  
+- **desktop** (100.118.85.70:8080, Q4_K_XL) → game.js
+
+### Résultats
+- Pong: 100% workers ✅
+- Asteroids: 100% workers ✅
+- Premier vrai test du workflow distribué réussi!
 
 ## Communication
 

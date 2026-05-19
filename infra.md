@@ -27,9 +27,10 @@ Context: 100K
 
 ### vivobook (Asus Vivobook)
 ```
-IP: 127.0.0.1
-Modèle: Qwen3.6-35B-A3B-UD-IQ2_M
-Statut: HORS LIGNE
+IP: 172.20.16.1 (via WSL)
+Modèle: Qwen3.6-35B-A3B-UD-IQ2_XXS
+Statut: ONLINE
+Context: 65K
 ```
 
 ## Services

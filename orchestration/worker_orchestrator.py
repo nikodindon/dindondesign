@@ -8,13 +8,17 @@ import json
 import time
 from datetime import datetime
 from typing import Optional
-import requests
+# Orchestrateur Dindon Design
+# Temps de génération par worker (estimés):
+# - vivobook: ~6 tokens/s -> timeout 300s pour 2048 tokens
+# - nitro: ~15 tokens/s -> timeout 180s
+# - desktop: ~25 tokens/s -> timeout 120s
 
 WORKERS = {
     "vivobook": {
-        "endpoint": "http://127.0.0.1:8080",
+        "endpoint": "http://172.20.16.1:8080",
         "role": "Archiviste/Coordinateur",
-        "model": "Qwen3.6-35B-A3B-UD-IQ2_M",
+        "model": "Qwen3.6-35B-A3B-UD-IQ2_XXS",
         "status": "offline",
         "max_tokens": 4096
     },

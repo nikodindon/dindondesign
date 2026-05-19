@@ -1,0 +1,20 @@
+{
+  "v0.1": {
+    "status": "done",
+    "contributions": [
+      {"worker": "desktop", "task": "SPEC generation", "status": "done"},
+      {"worker": "desktop", "task": "CORE engine", "status": "partial"},
+      {"worker": "nitro", "task": "CSS/UI", "status": "done"},
+      {"worker": "CTO", "task": "assembly", "status": "done"}
+    ]
+  },
+  "v0.2": {
+    "status": "pending",
+    "tasks": [
+      "Power-ups",
+      "Sound effects", 
+      "High score persistence",
+      "Boss levels"
+    ]
+  }
+}

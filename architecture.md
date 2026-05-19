@@ -19,10 +19,11 @@
 
 ## Workers
 
-### vivobook (CTO local/backup)
+### vivobook (CTO local)
 - **Rôle** : Archiviste, Coordinateur, DevOps léger
-- **Capacités** : Documentation, synthèse, gestion mémoire, organisation projet
-- **Statut** : Hors ligne temporairement
+- **Endpoint** : http://172.20.16.1:8080 (via WSL)
+- **Modèle** : Qwen3.6-35B-A3B-UD-IQ2_XXS (10GB, 65K context)
+- **Statut** : ✅ ONLINE
 
 ### nitro
 - **Rôle** : Frontend Engineer + QA

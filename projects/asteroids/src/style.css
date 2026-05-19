@@ -1,0 +1,38 @@
+body {
+  background: #000;
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+#game-container {
+  text-align: center;
+}
+h1 {
+  color: #0ff;
+  text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+  letter-spacing: 8px;
+  margin: 10px 0;
+}
+#hud {
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+canvas {
+  border: 2px solid #fff;
+  background: #000;
+}
+#message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 32px;
+  display: none;
+}

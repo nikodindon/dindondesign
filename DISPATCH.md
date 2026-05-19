@@ -5,10 +5,11 @@
 - Les workers génèrent TOUT le code
 - Pas coder soi-même même si ça urge
 
-## ⚠️ RÈGLE CRUCIALE: 1 Prompt = 1 Fichier
-- **NE JAMAIS** demander "Create index.html AND style.css" dans un même prompt
-- Le modèle répond avec du MARKDOWN explicatif au lieu de créer les vrais fichiers
-- **TOUJOURS** un prompt = un fichier à générer
+## ⚠️ RÈGLE CRUCIALE: NO MARKDOWN, ONLY CODE
+- **TOUJOURS** ajouter "NO MARKDOWN, ONLY CODE" dans les prompts
+- Le modèle sinon écrit du markdown avec des explications
+- Vérifier le code reçu - si markdown → reprompter
+- Extraction du JSON: le code est dans `choices[0].message.content`
 
 ## Workflow Standard
 

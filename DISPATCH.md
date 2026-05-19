@@ -1,9 +1,14 @@
-# Guide de Dispacth Dindon Design
+# Guide de Dispatch Dindon Design
 
 ## Règle d'Or: CTO NE CODE PAS
 - CTO = spec + prompts UNIQUEMENT
 - Les workers génèrent TOUT le code
 - Pas coder soi-même même si ça urge
+
+## ⚠️ RÈGLE CRUCIALE: 1 Prompt = 1 Fichier
+- **NE JAMAIS** demander "Create index.html AND style.css" dans un même prompt
+- Le modèle répond avec du MARKDOWN explicatif au lieu de créer les vrais fichiers
+- **TOUJOURS** un prompt = un fichier à générer
 
 ## Workflow Standard
 
@@ -14,18 +19,26 @@ mkdir -p /home/niko/dindondesign/projects/<nom>/src
 
 # 3. Dispatcher 1 fichier par worker en parallèle
 #    - vivobook → input.js (172.20.16.1:8080) 
-#    - nitro → index.html + style.css (100.66.131.33:8080)
+#    - nitro → index.html (100.66.131.33:8080)
+#    - nitro → style.css (100.66.131.33:8080) [SI PAREIL, job consécutifs]
 #    - desktop → game.js (100.118.85.70:8080)
 
 # 4. Utiliser background=true pour éviter timeouts
-curl -s -X POST http://<IP>:8080/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -d '{"model": "...", "messages": [{"role": "user", "content": "..."}]}' \
-  -o /home/niko/dindondesign/projects/<nom>/src/<fichier>
-
 # 5. Extraire code du JSON wrapper si besoin
 # 6. Lancer serveur: python3 -m http.server <PORT> --bind 0.0.0.0
 ```
+
+## ⚠️ Comparaison Single vs Multi
+
+| Approche | Avantages | Inconvénients |
+|----------|-----------|---------------|
+| **Single** (desktop only, 1 fichier) | oneshot complet, plus simple | 1 seul worker |
+| **Multi** (3 workers, 3 fichiers) | parallel, chaque worker spécialisé | prompts + complexes, risque markdown |
+
+## Test: Snake Single vs Multi
+- Single (4017): game.html → ✅ Jouable!
+- Multi (4018): index.html = markdown → ❌ Cassé
+- LEÇON: Pour l'instant single plus fiable pour oneshot complet
 
 ## Matching Worker → Task Size
 

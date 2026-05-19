@@ -1,0 +1,11 @@
+{
+  "v0.1": {
+    "status": "done",
+    "contributions": [
+      {"worker": "vivobook", "task": "SPEC game design", "status": "done"},
+      {"worker": "nitro", "task": "CSS neon style", "status": "done"},
+      {"worker": "desktop", "task": "CORE engine JS", "status": "done"},
+      {"worker": "CTO", "task": "assembly + launch", "status": "done"}
+    ]
+  }
+}

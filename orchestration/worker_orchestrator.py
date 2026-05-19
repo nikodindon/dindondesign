@@ -10,9 +10,14 @@ from datetime import datetime
 from typing import Optional
 # Orchestrateur Dindon Design
 # Temps de génération par worker (estimés):
-# - vivobook: ~6 tokens/s -> timeout 300s pour 2048 tokens
-# - nitro: ~15 tokens/s -> timeout 180s
-# - desktop: ~25 tokens/s -> timeout 120s
+# - vivobook: ~6 tokens/s -> timeout 600s, max_tokens 32768
+# - nitro: ~15 tokens/s -> timeout 300s, max_tokens 32768
+# - desktop: ~25 tokens/s -> timeout 300s, max_tokens 65536
+
+# RÈGLES DE PARALLÉLISATION:
+# - NE PAS paralléliser SPEC + CODE (le code a besoin de la spec)
+# - Paralléliser uniquement les tâches indépendantes (multi-files, multi-features)
+# - CTO décide quoi dispatcher et quand
 
 WORKERS = {
     "vivobook": {
